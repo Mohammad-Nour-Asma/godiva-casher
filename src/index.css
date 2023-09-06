@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 3ms ease;
+    color: #343434;
+    scroll-behavior: smooth;
+  }
+
+  .loader-container {
+    text-align: center;
+}
+
+.diamond {
+    fill: transparent;
+    stroke: #f6c566;
+    stroke-width: 2;
+    animation: drawDiamond 2s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.text {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    fill: transparent;
+    stroke: #f6c566;
+    stroke-width: 2;
+    stroke-dasharray: 160;
+    stroke-dashoffset: 160;
+    animation: drawText 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards ,
+               revealText 0.5s cubic-bezier(0.42, 0, 0.58, 1) 0.5s forwards ,
+               colorizeText 0.5s cubic-bezier(0.42, 0, 0.58, 1) 0.5s forwards ;
+    transform-origin: center;
+}
+
+#letterG {
+    animation-delay: 0.2s;
+}
+
+#letterO {
+    animation-delay: 0.4s;
+}
+
+#letterD {
+    animation-delay: 0.6s;
+}
+
+#letterI {
+    animation-delay: 0.8s;
+}
+
+#letterV {
+    animation-delay: 1s;
+}
+
+#letterA {
+    animation-delay: 1.2s;
+}
+
+@keyframes drawText {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes revealText {
+    from {
+        fill-opacity: 0;
+    }
+    to {
+        fill-opacity: 1;
+    }
+}
+
+@keyframes colorizeText {
+    to {
+        fill: #f6c566;
+    }
+}
+
+@keyframes drawDiamond {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
